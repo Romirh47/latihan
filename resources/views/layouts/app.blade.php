@@ -108,6 +108,7 @@
       <div class="body-wrapper-inner">
         <div class="container-fluid">
           <!--  Row 1 -->
+          @yield('content')
 
           </div>
           {{-- <div class="py-6 px-6 text-center">
