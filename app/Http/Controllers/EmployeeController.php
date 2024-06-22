@@ -5,17 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
-class EmployeeController extends Controller {
-    public function index() {
+class EmployeeController extends Controller
+{
+    public function index()
+    {
         $employees = Employee::all();
         return view('employees.index', compact('employees'));
     }
 
-    public function create() {
+    public function create()
+    {
         return view('employees.create');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $request->validate([
             'nama' => 'required',
             'email' => 'required|email|unique:employees,email',
@@ -29,15 +33,18 @@ class EmployeeController extends Controller {
         return redirect()->route('employees.index')->with('success', 'Employee created successfully.');
     }
 
-    public function show(Employee $employee) {
+    public function show(Employee $employee)
+    {
         return view('employees.show', compact('employee'));
     }
 
-    public function edit(Employee $employee) {
+    public function edit(Employee $employee)
+    {
         return view('employees.edit', compact('employee'));
     }
 
-    public function update(Request $request, Employee $employee) {
+    public function update(Request $request, Employee $employee)
+    {
         $request->validate([
             'nama' => 'required',
             'email' => 'required|email|unique:employees,email,' . $employee->id,
@@ -51,7 +58,8 @@ class EmployeeController extends Controller {
         return redirect()->route('employees.index')->with('success', 'Employee updated successfully.');
     }
 
-    public function destroy(Employee $employee) {
+    public function destroy(Employee $employee)
+    {
         $employee->delete();
         return redirect()->route('employees.index')->with('success', 'Employee deleted successfully.');
     }

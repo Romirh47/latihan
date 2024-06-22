@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,9 +29,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 Route::middleware(['auth'])->group(function () {
+    // Route for showing employee list
+    Route::get('/employees', function () {
+        return view('employees.index');
+    })->name('employees.index');
+
+    // Resourceful routes for employees managed by EmployeeController
     Route::resource('employees', EmployeeController::class);
 });
+
 
 
 require __DIR__.'/auth.php';
