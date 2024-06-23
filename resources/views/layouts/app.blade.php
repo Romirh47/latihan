@@ -4,10 +4,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matdash Free</title>
+  <title>HRtrack</title>
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="/assets/css/styles.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zurb-ink@6.0.0/css/zmdi.min.css">
+  <style>
+    .btn-primary {
+        --bs-btn-color: #fff !important;
+        --bs-btn-bg: #810947 !important;
+        --bs-btn-border-color: #810947 !important;
+        --bs-btn-hover-color: #fff !important;
+        --bs-btn-hover-bg: #57022e !important;
+        --bs-btn-hover-border-color: #57022e !important;
+        --bs-btn-focus-shadow-rgb: 122, 116, 255 !important;
+        --bs-btn-active-color: #fff !important;
+        --bs-btn-active-bg: #57022e !important;
+        --bs-btn-active-border-color: #57022e !important;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+        --bs-btn-disabled-color: #fff !important;
+        --bs-btn-disabled-bg: #810947 !important;
+        --bs-btn-disabled-border-color: #810947 !important;
+    }
+
+    .sidebar-nav ul .sidebar-item.selected>.sidebar-link,
+    .sidebar-nav ul .sidebar-item.selected>.sidebar-link.active,
+    .sidebar-nav ul .sidebar-item>.sidebar-link.active {
+        background-color: #810947;
+        color: #fff;
+        -webkit-box-shadow: 0px 17px 20px -8px rgba(77, 91, 236, 0.231372549);
+        box-shadow: 0px 17px 20px -8px rgba(77, 91, 236, 0.231372549);
+    }
+
+    .modal-content,
+    .swal2-modal {
+        background-color: rgb(10, 37, 64);
+        color: #fff;
+    }
+
+    .modal-content .modal-title,
+    .modal-content .modal-body .form-label,
+    .modal-content .modal-body .form-control,
+    .swal2-modal .swal2-title,
+    .swal2-modal .swal2-html-container {
+        color: #fff;
+    }
+
+    .modal-content .modal-body .form-control::placeholder {
+        color: #bbbbbb;
+    }
+</style>
 
 </head>
 
@@ -20,7 +65,7 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
+          <a href="#" class="text-nowrap logo-img">
             <img src="/assets/images/logos/logo.svg" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">

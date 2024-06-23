@@ -7,6 +7,51 @@
     <title>HRtrack</title>
     <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon.png" />
     <link rel="stylesheet" href="/assets/css/styles.min.css" />
+    <style>
+        .btn-primary {
+            --bs-btn-color: #fff !important;
+            --bs-btn-bg: #810947 !important;
+            --bs-btn-border-color: #810947 !important;
+            --bs-btn-hover-color: #fff !important;
+            --bs-btn-hover-bg: #57022e !important;
+            --bs-btn-hover-border-color: #57022e !important;
+            --bs-btn-focus-shadow-rgb: 122, 116, 255 !important;
+            --bs-btn-active-color: #fff !important;
+            --bs-btn-active-bg: #57022e !important;
+            --bs-btn-active-border-color: #57022e !important;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+            --bs-btn-disabled-color: #fff !important;
+            --bs-btn-disabled-bg: #810947 !important;
+            --bs-btn-disabled-border-color: #810947 !important;
+        }
+
+        .sidebar-nav ul .sidebar-item.selected>.sidebar-link,
+        .sidebar-nav ul .sidebar-item.selected>.sidebar-link.active,
+        .sidebar-nav ul .sidebar-item>.sidebar-link.active {
+            background-color: #810947;
+            color: #fff;
+            -webkit-box-shadow: 0px 17px 20px -8px rgba(77, 91, 236, 0.231372549);
+            box-shadow: 0px 17px 20px -8px rgba(77, 91, 236, 0.231372549);
+        }
+
+        .modal-content,
+        .swal2-modal {
+            background-color: rgb(10, 37, 64);
+            color: #fff;
+        }
+
+        .modal-content .modal-title,
+        .modal-content .modal-body .form-label,
+        .modal-content .modal-body .form-control,
+        .swal2-modal .swal2-title,
+        .swal2-modal .swal2-html-container {
+            color: #fff;
+        }
+
+        .modal-content .modal-body .form-control::placeholder {
+            color: #bbbbbb;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +68,7 @@
                                 <a href="/" class="text-nowrap logo-img text-center d-block py-3 w-100">
                                     <img src="/assets/images/logos/logo.svg" alt="">
                                 </a>
-                                <p class="text-center">HRtrack</p>
+                                <p class="text-center">Management Pegawai</p>
                                 @yield('content')
                             </div>
                         </div>

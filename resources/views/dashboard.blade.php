@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    <h1 class="text-3xl font-bold mb-8 text-gray-900">Dashboard Pegawai</h1>
+
     <div class="row">
         <div class="col-12">
             <div class="row">
@@ -90,6 +92,8 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 @endsection
+
