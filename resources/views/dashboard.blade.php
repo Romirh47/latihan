@@ -6,6 +6,14 @@
     <div class="row">
         <div class="col-12">
             <div class="row">
+                @php
+                    $totalEmployees = $countEmployee;
+                    $contractPercentage = $totalEmployees ? round(($countContractEmployees / $totalEmployees) * 100, 2) : 0;
+                    $internPercentage = $totalEmployees ? round(($countInterns / $totalEmployees) * 100, 2) : 0;
+                    $malePercentage = $totalEmployees ? round(($countMaleEmployees / $totalEmployees) * 100, 2) : 0;
+                    $femalePercentage = $totalEmployees ? round(($countFemaleEmployees / $totalEmployees) * 100, 2) : 0;
+                @endphp
+
                 <div class="col-lg-4">
                     <div class="card bg-dark">
                         <div class="card-body">
@@ -23,6 +31,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="card bg-dark">
                         <div class="card-body">
@@ -35,11 +44,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <h4 class="text-white" id="totalContractEmployees">{{ $countContractEmployees }} Orang</h4>
+                                    <h5 class="text-white">{{ $contractPercentage }}%</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="card bg-dark">
                         <div class="card-body">
@@ -52,11 +63,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <h4 class="text-white" id="totalInterns">{{ $countInterns }} Orang</h4>
+                                    <h5 class="text-white">{{ $internPercentage }}%</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="card bg-dark">
                         <div class="card-body">
@@ -69,11 +82,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <h4 class="text-white" id="totalMaleEmployees">{{ $countMaleEmployees }} Orang</h4>
+                                    <h5 class="text-white">{{ $malePercentage }}%</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="card bg-dark">
                         <div class="card-body">
@@ -86,11 +101,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <h4 class="text-white" id="totalFemaleEmployees">{{ $countFemaleEmployees }} Orang</h4>
+                                    <h5 class="text-white">{{ $femalePercentage }}%</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Card Bulat Statistik Pegawai -->
                 <div class="col-lg-4">
                     <div class="card bg-dark">
@@ -140,11 +157,11 @@
                             {{ $countFemaleEmployees }}
                         ],
                         backgroundColor: [
-                            '#DAC0A3',
-                            '#EADBC8',
-                            '#F8F0E5',
-                            '#0F2C59',
-                            '#948979'
+                            '#FFD700',
+                            '#FFA500',
+                            '#FFC0CB',
+                            '#00FF00',
+                            '#FF69B4'
                         ],
                         borderColor: '#0F2C59',
                         borderWidth: 1
