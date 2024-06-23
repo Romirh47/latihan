@@ -30,16 +30,8 @@ class EmployeeController extends Controller
             'status' => 'required|string|in:kontrak,intern',
         ]);
 
-        $employee = new Employee([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'phone' => $validated['phone'],
-            'gender' => $validated['gender'],
-            'position' => $validated['position'],
-            'status' => $validated['status'],
-        ]);
-
-        $employee->save();
+        // Buat objek Employee baru dan simpan ke database
+        $employee = Employee::create($validated);
 
         return response()->json([
             'message' => 'Employee created successfully!',
@@ -59,22 +51,14 @@ class EmployeeController extends Controller
             'status' => 'required|string|in:kontrak,intern',
         ]);
 
-        $employee->update([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'phone' => $validated['phone'],
-            'gender' => $validated['gender'],
-            'position' => $validated['position'],
-            'status' => $validated['status'],
-        ]);
+        // Update data pegawai dengan data yang divalidasi
+        $employee->update($validated);
 
         return response()->json([
             'message' => 'Employee updated successfully!',
             'employee' => $employee
         ]);
     }
-
-
 
     public function destroy(Employee $employee)
     {

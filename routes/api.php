@@ -19,9 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// routes/api.php
+// // routes/api.php
 
-Route::prefix('api')->group(function () {
-    Route::resource('employees', EmployeeController::class)->names('api.employees');
-});
+// Route::prefix('api')->group(function () {
+//     Route::resource('employees', EmployeeController::class)->names('api.employees');
+// });
 
+Route::apiResource('employee', EmployeeController::class)->names('api.employee');

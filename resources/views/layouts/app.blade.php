@@ -7,6 +7,8 @@
   <title>Matdash Free</title>
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="/assets/css/styles.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zurb-ink@6.0.0/css/zmdi.min.css">
+
 </head>
 
 <body>
@@ -33,7 +35,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('dashboard')}}" aria-expanded="false">
                 <iconify-icon icon="solar:widget-add-line-duotone"></iconify-icon>
                 <span class="hide-menu">Dashboard</span>
               </a>
@@ -67,12 +69,12 @@
                 <i class="ti ti-menu-2"></i>
               </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a class="nav-link " href="javascript:void(0)">
                 <iconify-icon icon="solar:bell-linear" class="fs-6"></iconify-icon>
                 <div class="notification bg-primary rounded-circle"></div>
               </a>
-            </li>
+            </li> --}}
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
