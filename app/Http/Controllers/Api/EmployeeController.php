@@ -22,34 +22,59 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'nama' => 'required',
-            'email' => 'required|email|unique:employees,email',
-            'phone' => 'required|numeric',
-            'gender' => 'required|in:male', 'female',
-            'position' => 'required',
-            'status' => 'required|in:kontrak', 'intern',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:employees',
+            'phone' => 'required|string|max:15',
+            'gender' => 'required|string|in:male,female',
+            'position' => 'required|string|max:255',
+            'status' => 'required|string|in:kontrak,intern',
         ]);
 
-        $employee = Employee::create($validated);
+        $employee = new Employee([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'],
+            'gender' => $validated['gender'],
+            'position' => $validated['position'],
+            'status' => $validated['status'],
+        ]);
 
-        return response()->json(['message' => 'Employee created successfully.', 'employee' => $employee]);
+        $employee->save();
+
+        return response()->json([
+            'message' => 'Employee created successfully!',
+            'employee' => $employee
+        ], 201);
     }
+
 
     public function update(Request $request, Employee $employee)
     {
         $validated = $request->validate([
-           'nama' => 'required',
-            'email' => 'required|email|unique:employees,email',
-            'phone' => 'required|numeric',
-            'gender' => 'required|in:male', 'female',
-            'position' => 'required',
-            'status' => 'required|in:kontrak', 'intern',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:employees,email,' . $employee->id,
+            'phone' => 'required|string|max:15',
+            'gender' => 'required|string|in:male,female',
+            'position' => 'required|string|max:255',
+            'status' => 'required|string|in:kontrak,intern',
         ]);
 
-        $employee->update($validated);
+        $employee->update([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'],
+            'gender' => $validated['gender'],
+            'position' => $validated['position'],
+            'status' => $validated['status'],
+        ]);
 
-        return response()->json(['message' => 'Employee updated successfully.', 'employee' => $employee]);
+        return response()->json([
+            'message' => 'Employee updated successfully!',
+            'employee' => $employee
+        ]);
     }
+
+
 
     public function destroy(Employee $employee)
     {

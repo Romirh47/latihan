@@ -22,7 +22,7 @@ class EmployeeFactory extends Factory
     public function definition()
     {
         return [
-            'nama' => $this->faker->name,
+            'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->numerify('##########'), // Generate 10 digits phone number
             'gender' => $this->faker->randomElement(['female', 'male']),

@@ -15,52 +15,55 @@ class EmployeeController extends Controller
 
     public function create()
     {
-        return view('employees.index');
+        return view('employees.create');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nama' => 'required',
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
             'email' => 'required|email|unique:employees,email',
-            'phone' => 'required|numeric',
-            'gender' => 'required|in:male', 'female',
-            'position' => 'required',
-            'status' => 'required|in:kontrak', 'intern',
+            'phone' => 'required|string|max:15',
+            'gender' => 'required|in:male,female',
+            'position' => 'required|string|max:255',
+            'status' => 'required|in:kontrak,intern',
         ]);
 
-        Employee::create($request->all());
-        return redirect()->route('employees.index')->with('success', 'Employee created successfully.');
+        $employee = Employee::create($validatedData);
+
+        return redirect()->route('employees.index')->with('success', 'Employee added successfully.');
     }
 
     public function show(Employee $employee)
     {
-        return view('employees.index', compact('employee'));
+        return view('employees.show', compact('employee'));
     }
 
     public function edit(Employee $employee)
     {
-        return view('employees.index', compact('employee'));
+        return view('employees.edit', compact('employee'));
     }
 
     public function update(Request $request, Employee $employee)
     {
         $request->validate([
-            'nama' => 'required',
-            'email' => 'required|email|unique:employees,email',
-            'phone' => 'required|numeric',
-            'gender' => 'required|in:male', 'female',
-            'position' => 'required',
-            'status' => 'required|in:kontrak', 'intern',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:employees,email,' . $employee->id,
+            'phone' => 'required|string|max:15',
+            'gender' => 'required|in:male,female',
+            'position' => 'required|string|max:255',
+            'status' => 'required|in:kontrak,intern',
         ]);
 
         $employee->update($request->all());
+
         return redirect()->route('employees.index')->with('success', 'Employee updated successfully.');
     }
 
     public function destroy(Employee $employee)
     {
         $employee->delete();
+
         return redirect()->route('employees.index')->with('success', 'Employee deleted successfully.');
     }
 }
