@@ -25,7 +25,7 @@ class EmployeeController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:employees',
             'phone' => 'required|string|max:15',
-            'gender' => 'required|string|in:male,female',
+            'gender' => 'required|string|in:Laki - laki,Perempuan',
             'position' => 'required|string|max:255',
             'status' => 'required|string|in:kontrak,intern',
         ]);
@@ -46,7 +46,7 @@ class EmployeeController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:employees,email,' . $employee->id,
             'phone' => 'required|string|max:15',
-            'gender' => 'required|string|in:male,female',
+            'gender' => 'required|string|in:Laki - laki,Perempuan',
             'position' => 'required|string|max:255',
             'status' => 'required|string|in:kontrak,intern',
         ]);

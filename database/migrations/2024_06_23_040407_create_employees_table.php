@@ -18,7 +18,7 @@ class CreateEmployeesTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
-            $table->enum('gender', ['male', 'female']);
+            $table->enum('gender', ['Laki - laki', 'Perempuan']);
             $table->string('position');
             $table->enum('status', ['kontrak', 'intern']);
             $table->timestamps();

@@ -75,8 +75,8 @@
                         <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
                         <select class="form-control" id="gender" name="gender" required>
                             <option value="">Pilih Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option value="Laki - laki">Laki - laki</option>
+                            <option value="Perempuan">Perempuan</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -135,8 +135,8 @@
                     <div class="mb-3">
                         <label for="gender" class="form-label">Gender</label>
                         <select class="form-control" id="edit_gender" name="gender" required>
-                            <option value="male">male</option>
-                            <option value="female">female</option>
+                            <option value="Laki - laki">Laki - laki</option>
+                            <option value="Perempuan">Perempuan</option>
                         </select>
                     </div>
                     <div class="mb-3">

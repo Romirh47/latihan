@@ -25,7 +25,7 @@ class EmployeeFactory extends Factory
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->numerify('##########'), // Generate 10 digits phone number
-            'gender' => $this->faker->randomElement(['female', 'male']),
+            'gender' => $this->faker->randomElement(['Laki - laki', 'Perempuan']),
             'position' => $this->faker->jobTitle,
             'status' => $this->faker->randomElement(['intern', 'kontrak']),
             'created_at' => now(),
