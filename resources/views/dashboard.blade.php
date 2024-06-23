@@ -91,9 +91,88 @@
                         </div>
                     </div>
                 </div>
+                <!-- Card Bulat Statistik Pegawai -->
+                <div class="col-lg-4">
+                    <div class="card bg-dark">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-6 mb-4">
+                                <span class="round-48 d-flex align-items-center justify-content-center rounded-circle bg-secondary-subtle">
+                                    <iconify-icon icon="fa-solid:chart-bar" class="fs-6 text-secondary"></iconify-icon>
+                                </span>
+                                <h6 class="mb-0 fs-4 text-white">Statistik Pegawai</h6>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <canvas id="employeeStatisticsChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Akhir Card Bulat Statistik Pegawai -->
             </div>
-
         </div>
     </div>
-@endsection
 
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var ctx = document.getElementById('employeeStatisticsChart').getContext('2d');
+            var totalEmployees = {{ $countEmployee }};
+            var chart = new Chart(ctx, {
+                type: 'pie', // Tipe chart (pie, bar, line, dll.)
+                data: {
+                    labels: [
+                        'Total Pegawai',
+                        'Pegawai Kontrak',
+                        'Intern',
+                        'Laki-laki',
+                        'Perempuan'
+                    ],
+                    datasets: [{
+                        label: 'Statistik Pegawai',
+                        data: [
+                            {{ $countEmployee }},
+                            {{ $countContractEmployees }},
+                            {{ $countInterns }},
+                            {{ $countMaleEmployees }},
+                            {{ $countFemaleEmployees }}
+                        ],
+                        backgroundColor: [
+                            '#DAC0A3',
+                            '#EADBC8',
+                            '#F8F0E5',
+                            '#0F2C59',
+                            '#948979'
+                        ],
+                        borderColor: '#0F2C59',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    var label = context.label || '';
+                                    var value = context.raw || 0;
+                                    var percentage = (value / totalEmployees * 100).toFixed(2);
+                                    return label + ': ' + value + ' (' + percentage + '%)';
+                                }
+                            }
+                        },
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+@endsection

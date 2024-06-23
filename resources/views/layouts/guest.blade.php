@@ -7,51 +7,66 @@
     <title>HRtrack</title>
     <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon.png" />
     <link rel="stylesheet" href="/assets/css/styles.min.css" />
+
     <style>
+        /* Background Body */
+        body {
+            background-color: #153448; /* Warna latar belakang utama */
+            color: #DFD0B8; /* Warna teks */
+        }
+
+        /* Button Primary */
         .btn-primary {
-            --bs-btn-color: #fff !important;
-            --bs-btn-bg: #810947 !important;
-            --bs-btn-border-color: #810947 !important;
-            --bs-btn-hover-color: #fff !important;
-            --bs-btn-hover-bg: #57022e !important;
-            --bs-btn-hover-border-color: #57022e !important;
-            --bs-btn-focus-shadow-rgb: 122, 116, 255 !important;
-            --bs-btn-active-color: #fff !important;
-            --bs-btn-active-bg: #57022e !important;
-            --bs-btn-active-border-color: #57022e !important;
-            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
-            --bs-btn-disabled-color: #fff !important;
-            --bs-btn-disabled-bg: #810947 !important;
-            --bs-btn-disabled-border-color: #810947 !important;
+            --bs-btn-color: #DFD0B8 !important; /* Warna teks tombol */
+            --bs-btn-bg: #3C5B6F !important; /* Warna latar belakang tombol */
+            --bs-btn-border-color: #3C5B6F !important; /* Warna tepi tombol */
+            --bs-btn-hover-color: #DFD0B8 !important; /* Warna teks saat hover */
+            --bs-btn-hover-bg: #948979 !important; /* Warna latar belakang saat hover */
+            --bs-btn-hover-border-color: #948979 !important; /* Warna tepi saat hover */
+            --bs-btn-focus-shadow-rgb: 122, 116, 255 !important; /* Bayangan fokus */
+            --bs-btn-active-color: #DFD0B8 !important; /* Warna teks saat aktif */
+            --bs-btn-active-bg: #948979 !important; /* Warna latar belakang saat aktif */
+            --bs-btn-active-border-color: #948979 !important; /* Warna tepi saat aktif */
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important; /* Bayangan saat aktif */
+            --bs-btn-disabled-color: #DFD0B8 !important; /* Warna teks saat dinonaktifkan */
+            --bs-btn-disabled-bg: #3C5B6F !important; /* Warna latar belakang saat dinonaktifkan */
+            --bs-btn-disabled-border-color: #3C5B6F !important; /* Warna tepi saat dinonaktifkan */
         }
 
-        .sidebar-nav ul .sidebar-item.selected>.sidebar-link,
-        .sidebar-nav ul .sidebar-item.selected>.sidebar-link.active,
-        .sidebar-nav ul .sidebar-item>.sidebar-link.active {
-            background-color: #810947;
-            color: #fff;
-            -webkit-box-shadow: 0px 17px 20px -8px rgba(77, 91, 236, 0.231372549);
-            box-shadow: 0px 17px 20px -8px rgba(77, 91, 236, 0.231372549);
+        /* Sidebar Navigation */
+        .sidebar-nav ul .sidebar-item.selected > .sidebar-link,
+        .sidebar-nav ul .sidebar-item.selected > .sidebar-link.active,
+        .sidebar-nav ul .sidebar-item > .sidebar-link.active {
+            background-color: #3C5B6F; /* Warna latar belakang item sidebar yang dipilih */
+            color: #DFD0B8; /* Warna teks item sidebar yang dipilih */
+            -webkit-box-shadow: 0px 17px 20px -8px rgba(77, 91, 236, 0.231372549); /* Bayangan */
+            box-shadow: 0px 17px 20px -8px rgba(77, 91, 236, 0.231372549); /* Bayangan */
         }
 
+        /* Modal Content */
         .modal-content,
         .swal2-modal {
-            background-color: rgb(10, 37, 64);
-            color: #fff;
+            background-color: #2554ef; /* Warna latar belakang konten modal */
+            color: #f7fcff; /* Warna teks konten modal */
         }
 
+        /* Modal Content - Titles, Labels, Inputs, etc. */
         .modal-content .modal-title,
         .modal-content .modal-body .form-label,
         .modal-content .modal-body .form-control,
         .swal2-modal .swal2-title,
         .swal2-modal .swal2-html-container {
-            color: #fff;
+            color: #153448; /* Warna teks untuk judul, label, dan input di dalam modal */
         }
 
+        /* Placeholder Text */
         .modal-content .modal-body .form-control::placeholder {
-            color: #bbbbbb;
+            color: #bbbbbb; /* Warna teks placeholder di dalam input */
         }
     </style>
+
+
+
 </head>
 
 <body>
