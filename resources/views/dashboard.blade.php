@@ -9,7 +9,7 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center gap-6 mb-4">
                                 <span class="round-48 d-flex align-items-center justify-content-center rounded bg-danger-subtle">
-                                    <iconify-icon icon="solar:box-linear" class="fs-6 text-danger"></iconify-icon>
+                                    <iconify-icon icon="fa-solid:users" class="fs-6 text-danger"></iconify-icon>
                                 </span>
                                 <h6 class="mb-0 fs-4 text-white">Total Pegawai</h6>
                             </div>
@@ -26,7 +26,7 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center gap-6 mb-4">
                                 <span class="round-48 d-flex align-items-center justify-content-center rounded bg-primary-subtle">
-                                    <i class="fa fa-user-friends fa-2x text-primary"></i>
+                                    <iconify-icon icon="fa-solid:user-friends" class="fs-6 text-primary"></iconify-icon>
                                 </span>
                                 <h6 class="mb-0 fs-4 text-white">Total Pegawai Kontrak</h6>
                             </div>
@@ -43,7 +43,7 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center gap-6 mb-4">
                                 <span class="round-48 d-flex align-items-center justify-content-center rounded bg-success-subtle">
-                                    <i class="fa fa-user-graduate fa-2x text-success"></i>
+                                    <iconify-icon icon="fa-solid:user-graduate" class="fs-6 text-success"></iconify-icon>
                                 </span>
                                 <h6 class="mb-0 fs-4 text-white">Total Intern</h6>
                             </div>
@@ -60,13 +60,13 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center gap-6 mb-4">
                                 <span class="round-48 d-flex align-items-center justify-content-center rounded bg-info-subtle">
-                                    <i class="fa fa-male fa-2x text-info"></i>
+                                    <iconify-icon icon="fa-solid:male" class="fs-6 text-info"></iconify-icon>
                                 </span>
                                 <h6 class="mb-0 fs-4 text-white">Total Laki-laki</h6>
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <h4 class="text-white" id="totalMaleEmployees">{{ $countMaleEmployees }}Orang</h4>
+                                    <h4 class="text-white" id="totalMaleEmployees">{{ $countMaleEmployees }} Orang</h4>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center gap-6 mb-4">
                                 <span class="round-48 d-flex align-items-center justify-content-center rounded bg-warning-subtle">
-                                    <i class="fa fa-female fa-2x text-warning"></i>
+                                    <iconify-icon icon="fa-solid:female" class="fs-6 text-warning"></iconify-icon>
                                 </span>
                                 <h6 class="mb-0 fs-4 text-white">Total Perempuan</h6>
                             </div>
