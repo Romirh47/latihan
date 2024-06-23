@@ -13,8 +13,8 @@ class DashboardController extends Controller
         $countEmployee = Employee::count(); // Menghitung total pegawai
         $countContractEmployees = Employee::where('status', 'kontrak')->count(); // Menghitung total pegawai kontrak
         $countInterns = Employee::where('status', 'intern')->count(); // Menghitung total intern
-        $countMaleEmployees = Employee::where('gender', 'male')->count(); // Menghitung total pegawai laki-laki
-        $countFemaleEmployees = Employee::where('gender', 'female')->count(); // Menghitung total pegawai perempuan
+        $countMaleEmployees = Employee::where('gender', 'Laki - laki')->count(); // Menghitung total pegawai laki-laki
+        $countFemaleEmployees = Employee::where('gender', 'perempuan')->count(); // Menghitung total pegawai perempuan
 
         return view('dashboard', [
             'countEmployee' => $countEmployee,
