@@ -21,6 +21,7 @@ class CreateEmployeesTable extends Migration
             $table->enum('gender', ['Laki - laki', 'Perempuan']);
             $table->string('position');
             $table->enum('status', ['kontrak', 'intern']);
+            $table->string('photo')->nullable(); // Menambahkan kolom photo yang bisa null
             $table->timestamps();
         });
     }
